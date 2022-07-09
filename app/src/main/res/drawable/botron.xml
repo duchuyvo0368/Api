@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+<solid
+    android:color="#EFE8E8"><!--set mau-->
+</solid>
+<corners
+    android:radius="25dp">
+    <!--ban kinh duong tro bo goc-->
+</corners>
+</shape>
