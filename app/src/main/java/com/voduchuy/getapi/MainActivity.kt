@@ -24,7 +24,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setUpView()
         getData()
+
+    }
+
+    private fun setUpView() {
+        adapter = AdapterUser()
+        binding.listItem.layoutManager = LinearLayoutManager(this)
+        binding.listItem.adapter = adapter
     }
 
     private fun getData() {
@@ -36,8 +44,10 @@ class MainActivity : AppCompatActivity() {
                 response: Response<List<UsersItem>>
             ) {
                 val listUser: ArrayList<UsersItem> = response.body() as ArrayList<UsersItem>
-                binding.listItem.layoutManager = LinearLayoutManager(this@MainActivity)
-                binding.listItem.adapter = AdapterUser(listUser)
+                adapter.listUser.clear()
+                adapter.listUser.addAll(listUser)
+                adapter.notifyDataSetChanged()
+
             }
 
             override fun onFailure(call: Call<List<UsersItem>>, t: Throwable) {
@@ -47,7 +57,7 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun getDataSearch(name:String) {
+    private fun getDataSearch(name: String) {
         val dataService: Service = ApiUtils.getDataService()
         val callback: Call<List<UsersItem>> = dataService.getSearch(name)
         callback.enqueue(object : Callback<List<UsersItem>> {
@@ -56,9 +66,9 @@ class MainActivity : AppCompatActivity() {
                 response: Response<List<UsersItem>>
             ) {
                 val listUser: ArrayList<UsersItem> = response.body() as ArrayList<UsersItem>
-                binding.listItem.layoutManager = LinearLayoutManager(this@MainActivity)
-                binding.listItem.adapter = AdapterUser(listUser)
-                Log.d("BBB", "$listUser")
+                adapter.listUser.clear()
+                adapter.listUser.addAll(listUser)
+                adapter.notifyDataSetChanged()
             }
 
             override fun onFailure(call: Call<List<UsersItem>>, t: Throwable) {
@@ -69,11 +79,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.main_menu,menu)
-        val searchManager:SearchManager=getSystemService(Context.SEARCH_SERVICE) as SearchManager
+        menuInflater.inflate(R.menu.main_menu, menu)
+        val searchManager: SearchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
         val searchView: SearchView = menu!!.findItem(R.id.action_search).actionView as SearchView
         searchView.setSearchableInfo(searchManager.getSearchableInfo(componentName))
-        searchView.maxWidth=Int.MAX_VALUE
+        searchView.maxWidth = Int.MAX_VALUE
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 if (query != null) {

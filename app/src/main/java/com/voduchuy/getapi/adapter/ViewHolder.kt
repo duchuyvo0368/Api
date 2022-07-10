@@ -1,6 +1,7 @@
 package com.voduchuy.getapi.adapter
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -22,8 +23,9 @@ class ViewHolder(private val binding: ItemViewBinding) : RecyclerView.ViewHolder
     fun bind(user: UsersItem) {
         binding.tvName.text = user.name
         binding.tvUrl.text = user.email
-//        Glide.with(binding.root).load(user.avatar_url)
-//            .error(R.mipmap.ic_launcher).into(binding.profileImage)
+        Glide.with(binding.root).load(user.getImage())
+            .error(R.mipmap.ic_launcher).into(binding.profileImage)
+        Log.d("Images","${user.getImage()} $user")
 
         /*
         -Glide.with():co the truyen vao activity,fragment,context,view
