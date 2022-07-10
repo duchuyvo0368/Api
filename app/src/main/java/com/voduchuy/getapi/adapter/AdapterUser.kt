@@ -17,8 +17,9 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class AdapterUser(private var listUser: List<UsersItem>) :
+class AdapterUser() :
     RecyclerView.Adapter<ViewHolder>() {
+    val listUser= mutableListOf<UsersItem>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder.from(parent)
