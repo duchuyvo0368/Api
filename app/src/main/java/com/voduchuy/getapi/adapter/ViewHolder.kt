@@ -22,7 +22,8 @@ class ViewHolder(private val binding: ItemViewBinding) : RecyclerView.ViewHolder
 
     fun bind(user: UsersItem) {
         binding.tvName.text = user.name
-        binding.tvUrl.text = user.email
+        binding.tvUsername.text=user.username
+        binding.tvWorkEmail.text = user.workEmail
         Glide.with(binding.root).load(user.getImage())
             .error(R.mipmap.ic_launcher).into(binding.profileImage)
         Log.d("Images","${user.getImage()} $user")

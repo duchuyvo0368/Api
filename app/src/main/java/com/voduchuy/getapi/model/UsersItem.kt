@@ -9,8 +9,13 @@ data class UsersItem(
     val name: String,
 
     val username: String,
-
-    val email: String,
+//
+//    val email: String,
+    val mobile:String,
+    val workEmail:String,
+    val personalEmail:String,
+    val company:String,
+    val jobTitle:String
 
 
 ){

@@ -2,10 +2,10 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
 <solid
-    android:color="#EFE8E8"><!--set mau-->
+    android:color="#F3EDED"><!--set mau-->
 </solid>
 <corners
-    android:radius="25dp">
+    android:radius="30dp">
     <!--ban kinh duong tro bo goc-->
 </corners>
 </shape>
