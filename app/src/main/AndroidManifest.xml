@@ -13,6 +13,8 @@
         android:theme="@style/Theme.GetApi">
         <activity
             android:name=".AddUsers"
+            android:label="Add User"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

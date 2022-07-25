@@ -17,6 +17,7 @@
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:gravity="center"
+
             android:orientation="vertical">
 
             <de.hdodenhof.circleimageview.CircleImageView
@@ -35,7 +36,7 @@
                 app:hintEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tvName"
+                    android:id="@+id/edtName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
@@ -44,21 +45,7 @@
                     android:maxLength="50" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                app:hintEnabled="true">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tvUsername"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:hint="Username"
-                    android:inputType="text"
-                    android:maxLength="50" />
-            </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -67,7 +54,7 @@
                 app:hintEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tvMobile"
+                    android:id="@+id/edtMobile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
@@ -83,11 +70,11 @@
                 app:hintEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/workEmail"
+                    android:id="@+id/edtEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
-                    android:hint="Work email"
+                    android:hint="@string/email"
                     android:inputType="text"
                     android:maxLength="50" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -99,43 +86,11 @@
                 app:hintEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tvPersonalEmail"
+                    android:id="@+id/edtTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
-                    android:hint="Personal email"
-                    android:inputType="text"
-                    android:maxLength="50" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                app:hintEnabled="true">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tvCompany"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:hint="Company"
-                    android:inputType="text"
-                    android:maxLength="50" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                app:hintEnabled="true">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/jobTitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:hint="Job title"
+                    android:hint="Title"
                     android:inputType="text"
                     android:maxLength="50" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -144,7 +99,7 @@
                 android:id="@+id/btnSave"
                 android:layout_width="120dp"
                 android:layout_height="60dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginBottom="20dp"
                 android:text="Save" />
         </LinearLayout>
